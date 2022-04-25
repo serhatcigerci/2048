@@ -1,4 +1,5 @@
-import Grid from './Grid.js'
+import Grid from './grid.js/index.js'
+import Tile from './tile.js/'
 
 const gameBoard = document.getElementById('game-board')
 
