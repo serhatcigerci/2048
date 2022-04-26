@@ -3,9 +3,9 @@ export default class Tile {
   #x
   #y
   #value
-  constructor(tileContainter, value = Math.random() > 0.5 ? 2 : 4) {
+  constructor(tileContainer, value = Math.random() > 0.5 ? 2 : 4) {
     this.#tileElem = document.createElement('div')
-    this.#tileElem = classList.add('tile')
+    this.#tileElem.classList.add('tile')
     tileContainer.append(this.#tileElem)
     this.value = value
   }
