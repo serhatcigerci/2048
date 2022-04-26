@@ -12,6 +12,10 @@ export default class Grid {
       return new Cell(cellElem, index % GRID_SIZE, Math.floor(index / GRID_SIZE))
     })
   }
+
+  get cells() {
+    return this.#cells
+  }
   
   get cellsByRow() {
     return this.#cells.reduce((cellGrid, cell) => {
@@ -81,6 +85,13 @@ class Cell {
 
   canAccept(tile) {
     return (this.tile == null || (this.tile.value === nul && tile.value))
+  }
+
+  mergeTiles() {
+    if (this.tile == null || this.mergeTile == null) return
+    this.tile.value = this.tile.value + this.mergeTile.value
+    this.mergeTile.remove()
+    this.mergeTile = null
   }
 }
 

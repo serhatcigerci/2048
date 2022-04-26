@@ -12,23 +12,26 @@ function setupInput() {
   window.addEventListener('keydown', handleInput, { once: true})
 }
 
-function handleInput(e) {
+async function handleInput(e) {
   switch (e.key) {
     case 'ArrowUp':
-      moveUp()
+      await moveUp()
       break
     case 'ArrowDown':
-      moveDown()
+      await moveDown()
       break
     case 'ArrowLeft':
-      moveLeft()
+      await moveLeft()
       break
     case 'ArrowRight':
-      moveRight()
+      await moveRight()
     default:
       setupInput()
       return
   }
+
+  grid.cells.forEach(cell => cell.mergeTiles())
+
   setupInput()
 }
 
