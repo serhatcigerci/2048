@@ -15,26 +15,21 @@ body {
 
 #game-board {
   display: grid;
-  grid-template-rows: repeat(var(--grid-size), var(--cell-size));
   grid-template-columns: repeat(var(--grid-size), var(--cell-size));
+  grid-template-rows: repeat(var(--grid-size), var(--cell-size));
   background-color: #CCC;
   gap: var(--cell-gap);
-  border-radius: var(--cell-gap);
-  border: 1vmin;
+  border-radius: 1vmin;
   padding: var(--cell-gap);
   position: relative;
 }
 
-.cell{
+.cell {
   background-color: #AAA;
   border-radius: 1vmin;
 }
 
 .tile {
-  --x: 1;
-  --y: 2;
-  --background-lightness: 80%;
-  --text-lightness: 20%;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -55,6 +50,6 @@ body {
 @keyframes show {
   0% {
     opacity: 0.5;
-    transform: scale(0)
+    transform: scale(0);
   }
 }

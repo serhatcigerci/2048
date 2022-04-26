@@ -72,7 +72,7 @@ class Cell {
     this.#tile.y = this.#y
   }
 
-  get MergeTile() {
+  get mergeTile() {
     return this.#mergeTile
   }
 
@@ -84,7 +84,10 @@ class Cell {
   }
 
   canAccept(tile) {
-    return (this.tile == null || (this.tile.value === null && tile.value))
+    return (
+      this.tile == null ||
+      (this.mergeTile == null && this.tile.value === tile.value)
+    )
   }
 
   mergeTiles() {
@@ -97,9 +100,9 @@ class Cell {
 
 function createCellElements(gridElem) {
   const cells = []
-  for(let i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
-    const cell = document.createElement('div')
-    cell.classList.add('cell')
+  for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
+    const cell = document.createElement("div")
+    cell.classList.add("cell")
     cells.push(cell)
     gridElem.append(cell)
   }
