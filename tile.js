@@ -38,9 +38,9 @@ export default class Tile {
     this.#tileElem.remove()
   }
 
-  waitForTransition() {
+  waitForTransition(animation = false) {
     return new Promise(resolve => {
-      this.#tileElem.addEventListener('transitionend', resolve, {
+      this.#tileElem.addEventListener(animation ? 'animationend' : 'transitionend', resolve, {
         once: true,
       })
     })
