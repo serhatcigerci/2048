@@ -22,7 +22,7 @@ export default class Grid {
       cellGrid[cell.y] = cellGrid[cell.y] || []
       cellGrid[cell.y][cell.x] = cell
       return cellGrid
-    })
+    }, [])
   }
 
   get cellsByColumn() {
@@ -30,7 +30,7 @@ export default class Grid {
       cellGrid[cell.x] = cellGrid[cell.x] || []
       cellGrid[cell.x][cell.y] = cell
       return cellGrid
-    })
+    }, [])
   }
   get #emptyCells() {
     return this.#cells.filter(cell => cell.tile == null)
@@ -79,12 +79,12 @@ class Cell {
   set mergeTile(value) {
     this.#mergeTile = value
     if (value == null) return
-    this.#mergeTile.x = this.x
-    this.#mergeTile.y = this.y
+    this.#mergeTile.x = this.#x
+    this.#mergeTile.y = this.#y
   }
 
   canAccept(tile) {
-    return (this.tile == null || (this.tile.value === nul && tile.value))
+    return (this.tile == null || (this.tile.value === null && tile.value))
   }
 
   mergeTiles() {
