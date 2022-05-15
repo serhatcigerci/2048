@@ -1,1 +1,1 @@
-# I love coding games, you will be seeing more and more of them in my Github! :)
+# Hello! 2048 game I did with the tutorial of WDS. If you want to see the source, pay a visit here: https://youtu.be/wOVEe9eawXc
